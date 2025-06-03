@@ -154,6 +154,28 @@
         @media (max-width: 1000px) {
             .info-card { width: 95vw; }
         }
+        @media (max-width: 700px) {
+            .info-card {
+                width: 98vw !important;
+                min-width: 0 !important;
+                height: auto !important;
+                margin-bottom: 1.5rem !important;
+                position: static !important;
+            }
+            .info-card .card-front,
+            .info-card .card-back {
+                position: static !important;
+                width: 100% !important;
+                min-height: 0 !important;
+                padding: 1rem !important;
+                box-sizing: border-box !important;
+                display: block !important;
+            }
+            #about {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+        }
         /* Removed sticky nav and smooth scroll */
     </style>
 </head>
