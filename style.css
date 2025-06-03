@@ -1,46 +1,43 @@
 /* FANCY STYLES FOR ALL PAGES */
 
-/* --- Animations --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-@keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes popIn {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
-@keyframes textPop {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-@keyframes bounceIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    60% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); }
-}
-@keyframes floatBtn {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* --- General Styles --- */
 body {
     animation: fadeIn 2s ease;
     background: linear-gradient(to right, #fceabb, #f8b500);
-    background-repeat: no-repeat;
-    background-position: center;
     margin: 0;
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes textPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
 }
 
 h1, h2, h3 {
@@ -54,23 +51,25 @@ p {
     animation: fadeIn 2s ease;
 }
 
-/* --- Navigation --- */
 nav ul {
     list-style: none;
     padding: 0;
     background: #ff0000;
     margin: 0;
 }
+
 nav ul li {
     display: inline;
     margin: 0 15px;
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     position: relative;
 }
+
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -81,11 +80,11 @@ nav ul li a::after {
     left: 0;
     transition: width 0.3s;
 }
+
 nav ul li a:hover::after {
     width: 100%;
 }
 
-/* --- Sections --- */
 section {
     padding: 50px;
     margin: 20px;
@@ -95,7 +94,6 @@ section {
     animation: slideUp 1s ease-out;
 }
 
-/* --- Profile Pic --- */
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -105,36 +103,31 @@ section {
     margin: 20px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .profile-pic:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Project Images --- */
-.project img {
-    width: 80%;
-    max-width: 400px;
-    margin: 10px 0;
-}
 .project {
     animation: fadeSlide 1s ease-in-out;
     transition: transform 0.3s;
 }
+
 .project:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-/* --- Lists --- */
 ul li {
     transition: transform 0.3s ease;
 }
+
 ul li:hover {
     transform: scale(1.05);
     color: #ff5733;
 }
 
-/* --- Forms --- */
 form input, form textarea {
     display: block;
     width: 80%;
@@ -142,15 +135,15 @@ form input, form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: all 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
+
 form input:focus, form textarea:focus {
     transform: scale(1.02);
     border-color: #2a5298;
     outline: none;
 }
 
-/* --- Buttons --- */
 button {
     background: #333;
     color: white;
@@ -161,12 +154,12 @@ button {
     font-size: 16px;
     transition: background 0.3s, transform 0.3s;
 }
+
 button:hover {
     background: #2a5298;
     transform: scale(1.05);
 }
 
-/* --- Footer --- */
 footer {
     margin-top: 50px;
     background: #222;
@@ -175,7 +168,7 @@ footer {
     text-align: center;
 }
 
-/* --- Project Card Styles --- */
+/* Project Card Styles */
 .project-card {
     width: 320px;
     min-height: 180px;
@@ -239,7 +232,7 @@ footer {
     .project-card { width: 95vw; }
 }
 
-/* --- Download Link Button --- */
+/* Download Link Button */
 .download-link {
     display: inline-block;
     margin-top: 1rem;
@@ -256,7 +249,7 @@ footer {
     color: #fff;
 }
 
-/* --- Back to Top Button --- */
+/* Back to Top Button */
 #backToTopBtn {
     position: fixed;
     right: 32px;
@@ -290,8 +283,12 @@ footer {
 #backToTopBtn:hover svg circle {
     fill: #ff5733;
 }
+@keyframes floatBtn {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
-/* --- Social Logos/Links --- */
+/* Social Logos/Links */
 .social-logos {
     display: flex;
     gap: 2.5rem;
@@ -329,13 +326,57 @@ footer {
     text-decoration: underline;
 }
 
-/* --- Info Card (from about.html) --- */
-.info-card {
-    background: #f8f8ff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #2a529822;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 600px;
-    animation: fadeIn 1.5s;
+/* Responsive adjustments for all pages */
+@media (max-width: 700px) {
+    body, section {
+        padding: 0.5rem !important;
+    }
+    h1, h2, h3 {
+        font-size: 1.2rem !important;
+        word-break: break-word;
+    }
+    nav ul {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        padding-left: 0 !important;
+        align-items: flex-start !important;
+    }
+    nav ul li {
+        display: block !important;
+        margin: 0.5rem 0 !important;
+    }
+    .project-card, .info-card {
+        width: 98vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        margin-bottom: 1.5rem !important;
+        padding: 0.5rem !important;
+    }
+    .project-card .card-front,
+    .project-card .card-back {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+    img, .profile-pic {
+        max-width: 90vw !important;
+        height: auto !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .download-link {
+        width: 90vw !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+    }
+    .social-logos {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+    }
+    footer {
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
 }
