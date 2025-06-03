@@ -145,12 +145,13 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <form onsubmit="return sendMailTo(event)">
-            <input type="text" id="name" placeholder="Your Name" required onfocus="highlight(this)" onblur="unhighlight(this)">
-            <input type="email" id="email" placeholder="Your Email" required onfocus="highlight(this)" onblur="unhighlight(this)">
-            <textarea id="message" placeholder="Type your message here..." required onfocus="highlight(this)" onblur="unhighlight(this)"></textarea>
-            <button type="submit" onmouseenter="this.style.background='#1e3c72'" onmouseleave="this.style.background=''">Send</button>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+            <button type="submit">Send</button>
         </form>
+        <div id="feedback" style="margin-top:1em;color:#2a5298;font-weight:bold;"></div>
         <div class="contact-info">
             <p>
                 Email: 
@@ -169,7 +170,7 @@
                             <path d="M26.5 20H22V32H17V20H14V16H17V13.5C17 10.46 18.79 9 21.5 9C23.04 9 24 9.12 24 9.12V13H22.5C21.67 13 21.5 13.38 21.5 14V16H24.5L24 20Z" fill="white"/>
                         </svg>
                     </a>
-                    <a href="https://www.facebook.com/YOUR_FACEBOOK_USERNAME" target="_blank" class="contact-link social-name">Vishãv Ãrsh Prãsãd</a>
+                    <a href="https://www.facebook.com/https://www.facebook.com/share/19d8xpmiky/" target="_blank" class="contact-link social-name">Vishãv Ãrsh Prãsãd</a>
                 </div>
                 <div class="social-item">
                     <a href="https://www.instagram.com/vishavprasad_fj" target="_blank" class="social-link">
@@ -208,58 +209,17 @@
         <p>&copy; 2025 Vishav Prasad All rights reserved.</p>
     </footer>
     <script>
-        // Highlight input/textarea on focus
-        function highlight(el) {
-            el.style.background = "#f0f8ff";
-            el.style.boxShadow = "0 0 8px #2a5298";
-        }
-        function unhighlight(el) {
-            el.style.background = "";
-            el.style.boxShadow = "";
-        }
-
-        // Animate contact links on hover
-        function highlightLink(link) {
-            link.style.color = "#ff5733";
-            link.style.textDecoration = "underline";
-            link.style.fontWeight = "bold";
-        }
-        function unhighlightLink(link) {
-            link.style.color = "";
-            link.style.textDecoration = "";
-            link.style.fontWeight = "";
-        }
-
-        // Compose email with form data and show feedback message
-        function sendMailTo(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const subject = encodeURIComponent("Contact from Website");
-            const body = encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\n${message}`
-            );
-
-            // Simple positive feedback detection
-            const positiveWords = ["good", "great", "awesome", "excellent", "love", "amazing", "nice", "helpful", "useful", "best"];
-            let isPositive = false;
-            for (let word of positiveWords) {
-                if (message.toLowerCase().includes(word)) {
-                    isPositive = true;
-                    break;
-                }
-            }
-
-            if (isPositive) {
-                alert("Thank you for your Feedback");
-            } else {
-                alert("Thank you for your feedback. I will try to improve on this");
-            }
-
-            window.location.href = `mailto:vishavprasad36@gmail.com?subject=${subject}&body=${body}`;
-            return false;
-        }
+document.getElementById('contactForm').onsubmit = function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const subject = encodeURIComponent("Contact from Website");
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    document.getElementById('feedback').textContent = "Thank you for your message!";
+    document.getElementById('contactForm').reset();
+    // Optionally, comment out the next line if you don't want to open the mail client:
+};
     </script>
 </body>
 </html>
