@@ -178,6 +178,39 @@
             background: #ff5733;
             color: #fff;
         }
+
+        /* Remove scroll wheel and make cards expand naturally on mobile, like About Me page */
+        @media (max-width: 700px) {
+            .project-card {
+                width: 98vw !important;
+                min-width: 0 !important;
+                margin-bottom: 1.5rem !important;
+                position: static !important;
+                height: auto !important;
+                transition: height 0.3s;
+            }
+            .project-card .card-front,
+            .project-card .card-back {
+                position: static !important;
+                width: 100% !important;
+                min-height: 0 !important;
+                padding: 1rem !important;
+                box-sizing: border-box !important;
+                display: block !important;
+                height: auto !important;
+                overflow-y: visible !important;
+            }
+            .project-card .card-back {
+                /* Only show the back when flipped */
+                display: none !important;
+            }
+            .project-card.flipped .card-front {
+                display: none !important;
+            }
+            .project-card.flipped .card-back {
+                display: block !important;
+            }
+        }
     </style>
 </head>
 <body>
