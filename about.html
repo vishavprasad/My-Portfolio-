@@ -155,12 +155,17 @@
             .info-card { width: 95vw; }
         }
         @media (max-width: 700px) {
+            #about {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
             .info-card {
                 width: 98vw !important;
                 min-width: 0 !important;
-                height: auto !important;
                 margin-bottom: 1.5rem !important;
                 position: static !important;
+                height: auto !important;
+                transition: height 0.3s;
             }
             .info-card .card-front,
             .info-card .card-back {
@@ -170,10 +175,17 @@
                 padding: 1rem !important;
                 box-sizing: border-box !important;
                 display: block !important;
+                height: auto !important;
             }
-            #about {
-                flex-direction: column !important;
-                align-items: stretch !important;
+            .info-card .card-back {
+                /* Only show the back when flipped */
+                display: none !important;
+            }
+            .info-card.flipped .card-front {
+                display: none !important;
+            }
+            .info-card.flipped .card-back {
+                display: block !important;
             }
         }
         /* Removed sticky nav and smooth scroll */
