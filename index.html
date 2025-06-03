@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Vishav Prasad</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            animation: fadeIn 2s ease;
+            /* Match gradient with other pages */
+            background: linear-gradient(135deg, #e0eafc 60%, #cfdef3 100%);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #2a5298;
+            animation: popIn 1s ease-out;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .profile-pic {
+            border: 5px solid #2a5298;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a {
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: white;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            animation: fadeInText 2s ease;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>My Portfolio</h1>
+        <img src="D:\Computer\Website\Profile Photo.jpg" alt="Profile Picture" class="profile-pic">
+        <p> Welcome to my website. Please explore to find out more about me and my projects.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Vishav Prasad All rights reserved.</p>
+    </footer>
+</body>
+</html>
