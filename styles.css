@@ -278,3 +278,58 @@ button:hover {
     color: #ff5733;
     text-decoration: underline;
 }
+
+/* Responsive adjustments for all pages */
+@media (max-width: 700px) {
+    body, section {
+        padding: 0.5rem !important;
+    }
+    h1, h2, h3 {
+        font-size: 1.2rem !important;
+        word-break: break-word;
+    }
+    nav ul {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        padding-left: 0 !important;
+        align-items: flex-start !important;
+    }
+    nav ul li {
+        display: block !important;
+        margin: 0.5rem 0 !important;
+    }
+    .project-card, .info-card {
+        width: 98vw !important;
+        min-width: 0 !important;
+        height: auto !important;
+        margin-bottom: 1.5rem !important;
+        padding: 0.5rem !important;
+    }
+    .project-card .card-front,
+    .project-card .card-back {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+    img, .profile-pic {
+        max-width: 90vw !important;
+        height: auto !important;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .download-link {
+        width: 90vw !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+    }
+    .social-logos {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+    }
+    footer {
+        font-size: 0.95rem !important;
+        padding: 1rem !important;
+    }
+}
